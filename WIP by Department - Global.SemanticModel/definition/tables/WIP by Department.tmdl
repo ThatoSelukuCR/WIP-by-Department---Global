@@ -1,0 +1,274 @@
+table 'WIP by Department'
+	lineageTag: 128af54a-47a1-4052-8e0d-1b9a3c4ebac4
+
+	measure Row_Count =
+			
+			COUNTROWS('WIP by Department')
+		formatString: 0
+		lineageTag: d9308765-6b59-4dab-96e5-ab86541fa0aa
+
+	column Projectid
+		dataType: string
+		lineageTag: b98dba47-ff76-47c8-896b-dde7921d5e06
+		summarizeBy: none
+		sourceColumn: Projectid
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesAmountTransCurr
+		dataType: double
+		lineageTag: 5739be61-d845-4ff0-bf51-4537af2eec33
+		summarizeBy: sum
+		sourceColumn: SalesAmountTransCurr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Accounting Currency'
+		dataType: string
+		lineageTag: 3acbc8b5-8cb4-4887-9c81-8721d458ac00
+		summarizeBy: none
+		sourceColumn: Accounting Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Transactiondate
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: f542d9d6-828e-4864-b234-efc969d11259
+		summarizeBy: none
+		sourceColumn: Transactiondate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column 'Contracting Entity (CE)'
+		dataType: string
+		lineageTag: 174da02b-7273-4148-ac1d-929f850c2196
+		summarizeBy: none
+		sourceColumn: Contracting Entity (CE)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Status'
+		dataType: string
+		lineageTag: c7784f16-988a-4073-9997-fba6e29d8a3f
+		summarizeBy: none
+		sourceColumn: Transaction Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSACTIONTYPE
+		dataType: string
+		lineageTag: 835cacf6-d207-4f4a-af95-6000c53f1863
+		summarizeBy: none
+		sourceColumn: TRANSACTIONTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column linepropertyid
+		dataType: string
+		lineageTag: a737d10d-d5a3-4a5b-9a88-68d459c5d095
+		summarizeBy: none
+		sourceColumn: linepropertyid
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHARGEABLE
+		dataType: int64
+		formatString: 0
+		lineageTag: fb895d1b-49da-4539-a777-149fee314305
+		summarizeBy: sum
+		sourceColumn: CHARGEABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	column fiscalyear
+		dataType: string
+		lineageTag: 49848c29-ee17-437f-a3e3-048b0737e820
+		summarizeBy: none
+		sourceColumn: fiscalyear
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgingDays = ```
+			
+			DATEDIFF (
+			    'WIP by Department'[Transactiondate],
+			    TODAY(),
+			    DAY
+			)
+			
+			```
+		formatString: 0
+		lineageTag: 0190b6a3-557d-4b07-902e-550afa744f3d
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgingBracketSort =
+			
+			SWITCH (
+			    TRUE(),
+			    'WIP by Department'[AgingDays] <= 30, 1,
+			    'WIP by Department'[AgingDays] <= 60, 2,
+			    'WIP by Department'[AgingDays] <= 90, 3,
+			    4
+			)
+		formatString: 0
+		lineageTag: 2d06cf1d-d8fb-4b7b-9fb0-1e81be5915b6
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column AgingBracket =
+			
+			SWITCH (
+			    TRUE(),
+			    'WIP by Department'[AgingDays] <= 30, "Current",
+			    'WIP by Department'[AgingDays] > 30 && 'WIP by Department'[AgingDays] <= 60, "30-60 Days",
+			    'WIP by Department'[AgingDays] > 60 && 'WIP by Department'[AgingDays] <= 90, "60-90 Days",
+			    "90+ Days"
+			)
+		lineageTag: 46fc6696-2133-4108-8104-5a40c9165344
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'In Proforma?' =
+			
+			SWITCH(
+			    'WIP by Department'[Transaction Status],
+			    "Posted", "NO",
+			    "Invoiceproposal", "YES",
+			    "CreditnoteProposal", "CN",
+			    "NO"
+			)
+		lineageTag: 55d66625-8762-4cd8-a77e-da05877773ab
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Chargeable?' =
+			
+			IF(
+			    'WIP by Department'[CHARGEABLE] = 1,
+			    "Yes",
+			    IF(
+			        'WIP by Department'[CHARGEABLE] = 0,
+			        "No",
+			        BLANK()
+			    )
+			)
+		lineageTag: 0413ee1c-b476-4298-b436-a54556d10502
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column '30-60 Days' =
+			
+			IF (
+			    'WIP by Department'[AgingBracket] = "30-60 Days",
+			    'WIP by Department'[SalesAmountBudget],
+			    BLANK()
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 65559eac-5284-4b82-b158-e59f76dd88b1
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearCurrency = ```
+			CONCATENATE('WIP by Department'[fiscalyear],'WIP by Department'[Accounting Currency]) 
+			```
+		lineageTag: db8a7bef-5299-43bd-a08c-d14085967396
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesAmountBudget =
+			
+			VAR _FX = RELATED('FXRate'[FXRate])
+			RETURN
+			    IF(
+			        _FX > 0,
+			        DIVIDE('WIP by Department'[SalesAmountTransCurr], _FX, 0),
+			        0
+			    )
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 928aad53-999d-4d7f-8e5b-e9d10bcd641a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column '60-90 Days' =
+			
+			IF (
+			    'WIP by Department'[AgingBracket] = "60-90 Days",
+			    'WIP by Department'[SalesAmountBudget],
+			    BLANK()
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 5d9a5312-52cb-4b09-b9ce-3f77ae06a9f3
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column '90+ Days' =
+			
+			IF (
+			    'WIP by Department'[AgingBracket] = "90+ Days",
+			    'WIP by Department'[SalesAmountBudget],
+			    BLANK()
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: c60b0779-98ae-4c59-8e35-3e94329abeca
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Current =
+			
+			IF (
+			    'WIP by Department'[AgingBracket] = "Current",
+			    'WIP by Department'[SalesAmountBudget],
+			    BLANK()
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 9939751e-33aa-4386-bd34-e517013bb76a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column 'Dataset Refreshed On' = ```
+			
+			NOW()
+			
+			```
+		formatString: General Date
+		lineageTag: 391bc625-2a49-49cd-8e4d-1c8c2197a013
+		summarizeBy: none
+
+		variation Variation
+			isDefault
+			relationship: 2021acd7-4467-469e-9a66-9f0f57a961db
+			defaultHierarchy: LocalDateTable_49959454-515a-4a80-bd3f-9eda30e54103.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'WIP by Department' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("SQL-PROD-EDP-WEU.database.windows.net", "DB-PROD-SYN-SILVER-WEU", [Query="Select Projectid, #(lf)totalsalesamountcurrency as SalesAmountTransCurr,#(lf)       --CASE#(lf)       --    WHEN fx.FXRate > 0 THEN#(lf)       --        bt.totalsalesamountcur / fx.FXRate#(lf)       --    ELSE#(lf)       --        0#(lf)       --END AS SalesAmountBudget, -- create this in powerbi join fxrate table#(lf)        pt.currencyid as 'Accounting Currency'#(lf)       ,Transactiondate#(lf)       ,pt.legalentityid as 'Contracting Entity (CE)'#(lf)       ,ISNULL(PTS.transactionstatusdesc, 'Unknown') AS [Transaction Status]#(lf)       ,CASE projecttransactiontype#(lf)           WHEN 0 THEN#(lf)               'Hour'#(lf)           WHEN 1 THEN#(lf)               'Expense'#(lf)           WHEN 2 THEN#(lf)               'Item'#(lf)           WHEN 3 THEN#(lf)               'Revenue'#(lf)           WHEN 4 THEN#(lf)               'OnAccount'#(lf)           ELSE#(lf)               'Unknown'#(lf)       END AS TRANSACTIONTYPE#(lf)       ,pt.linepropertyid#(lf)       ,(CAST((CASE projecttransactiontype  -- projecttransactiontype#(lf)                  WHEN 5 THEN#(lf)                      1#(lf)                  ELSE#(lf)                      pl.TOBEINVOICED #(lf)              END#(lf)             ) AS INT)#(lf)       ) AS CHARGEABLE#(lf)       ,fc.fiscalyear#(lf)from [cdm].[fo_fact_projecttransactionv] pt#(lf)left join [cdm].[fo_dim_projecttransactionstatusv] pts#(lf)on pt.Transactionstatusid = pts.transactionstatusid#(lf)left join cdm.fo_projectlineproperty pl#(lf)on pt.linepropertyid = pl.linepropertyid#(lf)and pt.legalentityid = pl.legalentity#(lf)LEFT JOIN cdm.fo_LegalEntityidDateFiscalContext FC#(lf)    ON FC.LegalEntityid = pt.legalentityid #(lf)    and fc.Date = pt.transactiondate#(lf)where (pt.linepropertyid IN ( 'Bill', 'Bill1.5' ))#(lf)      AND (ISNULL(PTS.transactionstatusdesc, 'Unknown') IN ( 'Posted', 'InvoiceProposal', 'MarkedCreditNote', 'CreditNoteProposal' ))#(lf)", MultiSubnetFailover=true, CreateNavigationProperties=false])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

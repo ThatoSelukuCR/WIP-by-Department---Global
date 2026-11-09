@@ -1,0 +1,123 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 1068.3557199997729,
+        "y": 265.305959876053
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 1340.316857708254
+          },
+          "nodeIndex": "FINANCE VwDimLocation",
+          "nodeLineageTag": "7891ad8f-ab34-4fb1-90d4-3eb84c643c07",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 1403.1221586982149,
+            "y": 1211.026859291022
+          },
+          "nodeIndex": "ProjectGroupMapping",
+          "nodeLineageTag": "6aaeef5c-dd90-44e1-9e34-3fadd72d838b",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 2281.0428728213815,
+            "y": 1068.1061100408508
+          },
+          "nodeIndex": "DIM_ Date",
+          "nodeLineageTag": "718ba87d-26b7-4e30-871c-e32cc8e857aa",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 2283.1822541295874,
+            "y": 1511.886658619422
+          },
+          "nodeIndex": "VISTA",
+          "nodeLineageTag": "006adc81-d4f7-4a53-9510-91e70812dd3d",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1430.0745730816566,
+            "y": 690.06404914740551
+          },
+          "nodeIndex": "Region_Static",
+          "nodeLineageTag": "8e34cf7d-b166-455e-b19b-e918874076d5",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 2322.8817440750181,
+            "y": 587.81380448547
+          },
+          "nodeIndex": "FXRate",
+          "size": {
+            "height": 389.91795284694331,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1814.2444656440271,
+            "y": 1445.2563557996627
+          },
+          "nodeIndex": "projtable",
+          "size": {
+            "height": 511.29548554447342,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1727.30791772,
+            "y": 482.47651158668543
+          },
+          "nodeIndex": "WIP by Department",
+          "size": {
+            "height": 671.81613529555955,
+            "width": 381.92684952619038
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 56.08618936463958,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": true,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

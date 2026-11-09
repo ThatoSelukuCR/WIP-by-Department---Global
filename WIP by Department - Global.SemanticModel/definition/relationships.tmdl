@@ -1,0 +1,66 @@
+relationship f252ae8a-f367-426d-b6d7-32e9a39295df
+	joinOnDateBehavior: datePartOnly
+	fromColumn: projtable.'Start Date'
+	toColumn: LocalDateTable_675826b2-e1ec-4575-baaf-a8ebed7f57f4.Date
+
+relationship 1b8dd873-2c65-4331-ab5f-a014bd4222c0
+	joinOnDateBehavior: datePartOnly
+	fromColumn: projtable.'End Date'
+	toColumn: LocalDateTable_13f1adab-bd01-4eef-90de-8da25d03e01e.Date
+
+relationship 4280631c-80f1-4e80-a29d-ca8f75aff3b1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FXRate.TransDate
+	toColumn: LocalDateTable_123c18eb-b579-4cff-90a4-791a647eff24.Date
+
+relationship 639e0799-6cc4-4c1d-a02b-bc317cd1be19
+	joinOnDateBehavior: datePartOnly
+	fromColumn: FXRate.LoadDate
+	toColumn: LocalDateTable_7c2e7c93-6a02-4231-a065-8b78391e11d6.Date
+
+relationship 3b5b709f-e235-9cb4-5dcd-702f2553f904
+	crossFilteringBehavior: bothDirections
+	toCardinality: many
+	fromColumn: projtable.'Project ID'
+	toColumn: 'WIP by Department'.Projectid
+
+relationship 03556803-4ed3-5bc8-a2df-465e75bbda9b
+	fromColumn: 'WIP by Department'.FiscalYearCurrency
+	toColumn: FXRate.FiscalYearCurrency
+
+relationship 2021acd7-4467-469e-9a66-9f0f57a961db
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'WIP by Department'.'Dataset Refreshed On'
+	toColumn: LocalDateTable_49959454-515a-4a80-bd3f-9eda30e54103.Date
+
+relationship a0df51b4-0019-4292-8abd-2c0338c41197
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'DIM_ Date'.DateValue
+	toColumn: LocalDateTable_af1461b1-d600-494a-9a1e-43918f12209d.Date
+
+relationship a87a9f97-f467-4d86-9389-e56b0c5d8a02
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'DIM_ Date'.LastUpdate
+	toColumn: LocalDateTable_9ac251ac-3d27-4ca6-82fc-00724d6c2b44.Date
+
+relationship 2154d2a1-de00-15d0-d179-c6fd0b4f4d9c
+	fromColumn: 'WIP by Department'.Transactiondate
+	toColumn: 'DIM_ Date'.DateValue
+
+relationship 91aa9cd1-947f-a969-1a53-6473b0d8cb7c
+	fromColumn: projtable.UniqueFinancialDimension
+	toColumn: VISTA.OldDimension
+
+relationship 2180186a-6731-4dbd-abef-3d3cbf73f520
+	joinOnDateBehavior: datePartOnly
+	fromColumn: projtable.'Created On'
+	toColumn: LocalDateTable_359ae0cc-9a17-424f-9626-cdc8e6d1d70b.Date
+
+relationship 3c70e6fd-3149-fef0-8ab2-1e66eb77598a
+	fromColumn: 'WIP by Department'.'Contracting Entity (CE)'
+	toColumn: Region_Static.LEGALENTITY
+
+relationship f7573ca2-d2cb-35da-fcc6-7901147c981a
+	fromColumn: projtable.'Project Group ID'
+	toColumn: ProjectGroupMapping.'Project Group ID'
+

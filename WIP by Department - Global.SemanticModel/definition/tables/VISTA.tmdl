@@ -1,0 +1,103 @@
+table VISTA
+	lineageTag: 006adc81-d4f7-4a53-9510-91e70812dd3d
+
+	column OldDimension
+		dataType: string
+		lineageTag: 798bd4d9-57ff-4e32-8c99-cf2dd9d7fb4c
+		summarizeBy: none
+		sourceColumn: OldDimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column NewDimension
+		dataType: string
+		lineageTag: 7709320f-8a94-4ee2-8eed-03420181ce6b
+		summarizeBy: none
+		sourceColumn: NewDimension
+
+		annotation SummarizationSetBy = Automatic
+
+	column LocationShortCode
+		dataType: string
+		lineageTag: 8947e085-db5c-4377-938d-646309acb6af
+		summarizeBy: none
+		sourceColumn: LocationShortCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column B_Department
+		dataType: string
+		lineageTag: 57c99c7a-7fc4-475b-91ad-2e438585e300
+		summarizeBy: none
+		sourceColumn: B_Department
+
+		annotation SummarizationSetBy = Automatic
+
+	column B_Departmentvalue
+		dataType: string
+		lineageTag: 4be1ed7d-4fe2-4d75-b29c-d2f71b08e47d
+		summarizeBy: none
+		sourceColumn: B_Departmentvalue
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_BusinessUnit
+		dataType: string
+		lineageTag: 641af578-ffd0-428c-8b9b-ede315ee5611
+		summarizeBy: none
+		sourceColumn: C_BusinessUnit
+
+		annotation SummarizationSetBy = Automatic
+
+	column C_BusinessUnitvalue
+		dataType: string
+		lineageTag: 1873c582-0bf7-459d-9210-6404f7c55e47
+		summarizeBy: none
+		sourceColumn: C_BusinessUnitvalue
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_Team
+		dataType: string
+		lineageTag: cb6cbc11-6b0f-46b0-804e-5a1d9d9bc7e7
+		summarizeBy: none
+		sourceColumn: D_Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column D_TeamValue
+		dataType: string
+		lineageTag: 472e92dc-d7d5-463f-b99a-b659c792c6a1
+		summarizeBy: none
+		sourceColumn: D_TeamValue
+
+		annotation SummarizationSetBy = Automatic
+
+	column S_ServiceLine
+		dataType: string
+		lineageTag: cf6e1c08-e965-456d-9054-c024ce808ede
+		summarizeBy: none
+		sourceColumn: S_ServiceLine
+
+		annotation SummarizationSetBy = Automatic
+
+	column S_ServiceLineValue
+		dataType: string
+		lineageTag: c29b9e7a-2bda-444d-8c1a-f2279b4db632
+		summarizeBy: none
+		sourceColumn: S_ServiceLineValue
+
+		annotation SummarizationSetBy = Automatic
+
+	partition VISTA = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("SQL-PROD-EDP-WEU.database.windows.net", "DB-PROD-SYN-SILVER-WEU", [Query="Select OldDimension,NewDimension,LocationShortCode,B_Department,B_Departmentvalue,C_BusinessUnit,C_BusinessUnitvalue#(lf),D_Team,D_TeamValue,S_ServiceLine,S_ServiceLineValue#(lf)from [cdm].[fo_dim_vistafinancialdimensionsv] vd -- on g.financialdimension = vd.NewDimension", MultiSubnetFailover=true, CreateNavigationProperties=false])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

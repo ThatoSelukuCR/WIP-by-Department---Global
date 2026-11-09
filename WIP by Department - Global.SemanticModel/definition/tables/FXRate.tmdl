@@ -1,0 +1,77 @@
+table FXRate
+	lineageTag: 48a48d06-4351-472d-beee-8517b89cede8
+
+	column Country
+		dataType: string
+		lineageTag: 927de150-20ff-4008-9d24-4a41a249760f
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: 36bd1903-68f3-4e2e-b5b8-6936e3920c35
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column TransDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 32368d98-45f8-49cf-86ee-1ad4814cefe7
+		summarizeBy: none
+		sourceColumn: TransDate
+
+		variation Variation
+			isDefault
+			relationship: 4280631c-80f1-4e80-a29d-ca8f75aff3b1
+			defaultHierarchy: LocalDateTable_123c18eb-b579-4cff-90a4-791a647eff24.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FXRate
+		dataType: double
+		lineageTag: 5bfa3e58-3b38-4a9b-b805-ef8109872828
+		summarizeBy: sum
+		sourceColumn: FXRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LoadDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2d133143-4b9a-4e53-be6b-ec9a5fbf724e
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 639e0799-6cc4-4c1d-a02b-bc317cd1be19
+			defaultHierarchy: LocalDateTable_7c2e7c93-6a02-4231-a065-8b78391e11d6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearCurrency
+		dataType: string
+		lineageTag: 41b198a3-5914-4ad2-8120-10e5b2c4c077
+		summarizeBy: none
+		sourceColumn: FiscalYearCurrency
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FXRate = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("SQL-PROD-EDP-WEU.database.windows.net", "DB-PROD-SYN-SILVER-WEU", [Query="Select * from [cdm].[fo_dim_fxratev] fx-- join condition on fx.FiscalYearCurrency = concat(fc.FiscalYear,a.currencyid)", MultiSubnetFailover=true, CreateNavigationProperties=false])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

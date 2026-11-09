@@ -1,0 +1,31 @@
+table 'FINANCE VwDimLocation'
+	lineageTag: 7891ad8f-ab34-4fb1-90d4-3eb84c643c07
+
+	column dimensionvalue
+		dataType: string
+		lineageTag: 8a1a7d79-1935-4753-b531-a0697025ee8b
+		summarizeBy: none
+		sourceColumn: dimensionvalue
+
+		annotation SummarizationSetBy = Automatic
+
+	column description
+		dataType: string
+		lineageTag: a445b315-1aa3-4444-bfe6-7ea16a4531f3
+		summarizeBy: none
+		sourceColumn: description
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'FINANCE VwDimLocation' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("sql-prod-edp-weu.database.windows.net", "DB-PROD-SYN-SILVER-WEU", [Query="SELECT #(lf)    dimensionvalue, #(lf)    description #(lf)FROM finance.financialdimensionvalue#(lf)WHERE financialdimension like '%Location%'#(lf)"])
+				in
+				    Source
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

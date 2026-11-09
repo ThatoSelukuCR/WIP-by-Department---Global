@@ -1,0 +1,515 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "6625d6f086413004b7ba",
+  "position": {
+    "x": 16.666666666666668,
+    "y": 1051.6666666666667,
+    "z": 18000,
+    "height": 948.33333333333337,
+    "width": 1263.3333333333335,
+    "tabOrder": 17000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Contracting Entity (CE)"
+                }
+              },
+              "queryRef": "projtable (CDM).Contracting Entity (CE)",
+              "nativeQueryRef": "Entity",
+              "displayName": "Entity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Project Group ID"
+                }
+              },
+              "queryRef": "projtable (CDM).Project Group ID",
+              "nativeQueryRef": "Type",
+              "displayName": "Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "SL_Clean"
+                }
+              },
+              "queryRef": "projtable (CDM).SL_Clean",
+              "nativeQueryRef": "Opp #",
+              "displayName": "Opp #"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Project ID"
+                }
+              },
+              "queryRef": "projtable (CDM).Project ID",
+              "nativeQueryRef": "Project #",
+              "displayName": "Project #"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Name"
+                }
+              },
+              "queryRef": "projtable (CDM).Name",
+              "nativeQueryRef": "Project Name",
+              "displayName": "Project Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Project Manager Clean"
+                }
+              },
+              "queryRef": "projtable (CDM).Project Manager Clean",
+              "nativeQueryRef": "Project Manager1",
+              "displayName": "Project Manager"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WIP by Department"
+                    }
+                  },
+                  "Property": "In Proforma?"
+                }
+              },
+              "queryRef": "WIP by Department (CDM).In Proforma?",
+              "nativeQueryRef": "Bill",
+              "displayName": "Bill"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WIP by Department"
+                    }
+                  },
+                  "Property": "Transaction Status"
+                }
+              },
+              "queryRef": "WIP by Department (CDM).Transaction Status",
+              "nativeQueryRef": "Transaction Status1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WIP by Department"
+                    }
+                  },
+                  "Property": "TRANSACTIONTYPE"
+                }
+              },
+              "queryRef": "WIP by Department (CDM).TRANSACTIONTYPE",
+              "nativeQueryRef": "TRANSACTIONTYPE1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WIP by Department"
+                    }
+                  },
+                  "Property": "Is Chargeable?"
+                }
+              },
+              "queryRef": "WIP by Department (CDM).Is Chargeable?",
+              "nativeQueryRef": "Is Chargeable?1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "WIP by Department"
+                    }
+                  },
+                  "Property": "linepropertyid"
+                }
+              },
+              "queryRef": "WIP by Department (CDM).linepropertyid",
+              "nativeQueryRef": "linepropertyid1"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WIP by Department"
+                        }
+                      },
+                      "Property": "Current"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(WIP by Department (CDM).Current)",
+              "nativeQueryRef": "0-30 days",
+              "displayName": "0-30 days"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WIP by Department"
+                        }
+                      },
+                      "Property": "30-60 Days"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(WIP by Department (CDM).30-60 Days)",
+              "nativeQueryRef": "30-60 Days",
+              "displayName": "30-60 Days"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WIP by Department"
+                        }
+                      },
+                      "Property": "60-90 Days"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(WIP by Department (CDM).60-90 Days)",
+              "nativeQueryRef": "60-90 Days",
+              "displayName": "60-90 Days"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WIP by Department"
+                        }
+                      },
+                      "Property": "90+ Days"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(WIP by Department (CDM).90+ Days)",
+              "nativeQueryRef": "90+ Days",
+              "displayName": "90+ Days"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "WIP by Department"
+                        }
+                      },
+                      "Property": "SalesAmountBudget"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(WIP by Department (CDM).SalesAmountBudget)",
+              "nativeQueryRef": "Grand Total",
+              "displayName": "Grand Total"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "projectcontroller"
+                }
+              },
+              "queryRef": "projtable (CDM).projectcontroller",
+              "nativeQueryRef": "Coordinator",
+              "displayName": "Coordinator"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#053747'"
+                    }
+                  }
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Left'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "WIP by Department (AMER).Contracting Entity (CE)"
+          }
+        },
+        {
+          "properties": {
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Right'"
+                }
+              }
+            },
+            "styleHeader": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Sum(WIP by Department (AMER).SalesAmountBudget)"
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "117.82878868590348D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "WIP by Department"
+                          }
+                        },
+                        "Property": "AgingBracket"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'A-Current'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#053747'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'PM - Detailed by Project'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'4fdb3efaea9eefb529b3'"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Canvas'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

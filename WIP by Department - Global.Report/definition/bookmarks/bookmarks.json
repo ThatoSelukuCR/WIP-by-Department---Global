@@ -1,0 +1,111 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/bookmarksMetadata/1.0.0/schema.json",
+  "items": [
+    {
+      "name": "bfdac00bb40776e48730",
+      "displayName": "GLOBAL WIP",
+      "children": [
+        "e416d9700d40e089d501",
+        "00507550900850a9ec31",
+        "28ec3082cdda917c18ab",
+        "6eeea656400b78036ca6",
+        "fb9a910b03c36d512924",
+        "45e9a377358804671ce2",
+        "5b4d22bac2a21c3a224e",
+        "74f829edec6d563871f6"
+      ]
+    },
+    {
+      "name": "a7774abe98ec4be1f30f",
+      "displayName": "SECURITY",
+      "children": [
+        "894185b59498b519292d",
+        "b702b24128cbb17a6115",
+        "04ef98b61565efb89e15",
+        "76d4ec3fb8270a53006b",
+        "b8cfb0bfe51aa56ddac8",
+        "1e722eaf1b2d36a716dd",
+        "73f5ce1949e322d915fc",
+        "232875dc89f1d524e108"
+      ]
+    },
+    {
+      "name": "261f2d2c332810807958",
+      "displayName": "I&A",
+      "children": [
+        "c7af81b7a137dbacce47",
+        "31cff3258e948469c35c",
+        "a11db4476227b5b3da5f",
+        "7acb406c62b7ba77c166",
+        "01efcaf1f9358f551e7a",
+        "feff8263b6b33f11a014"
+      ]
+    },
+    {
+      "name": "213ecb1ca8b75de86453",
+      "displayName": "D+DI",
+      "children": [
+        "6d41586eaedbe49c7d58",
+        "099dd4ae82636580c4f7",
+        "04bec8e70583e94ba0e6",
+        "bb230ae87d3c5f73bedd"
+      ]
+    },
+    {
+      "name": "a6f77216ff145a4b1bd7",
+      "displayName": "DR",
+      "children": [
+        "3d0a12ab962281e89d01",
+        "9fcc8a5eddeabb9fefee",
+        "7fb81fddac1452cb11a8",
+        "12a0b08cd410ef2cfe6b"
+      ]
+    },
+    {
+      "name": "5e707548f3bc91d476b4",
+      "displayName": "FORENSICS",
+      "children": [
+        "fe9efabebec00736acac",
+        "6bf8ebd5b908220ebb16",
+        "73a2e051351def84ff54"
+      ]
+    },
+    {
+      "name": "ad572dce027f0cfdee29",
+      "displayName": "D&TC",
+      "children": [
+        "74d16186fb7365f0afc2",
+        "1451da6574013b4dd24c",
+        "434e94e2c89b14c19588"
+      ]
+    },
+    {
+      "name": "c561f32af2163b7772a2",
+      "displayName": "GRO",
+      "children": [
+        "337d2453d5950b8bd7d0",
+        "0ae24f6a000da795cc68",
+        "b79bb2ac365738548238",
+        "a75302773d9d4d36fb66",
+        "2a1dbe991b79c3598497",
+        "6af8d0d6b9d26bb04c49",
+        "28f814f27768088557db",
+        "e71538db12a2bed67d7d"
+      ]
+    },
+    {
+      "name": "2ad92f0a7f66a2775002",
+      "displayName": "All Projects",
+      "children": [
+        "46c8e55f1a05cbacb39d",
+        "865b0be6d9209b3170c1",
+        "0cf49805b2eb9980c39d",
+        "35fcb7c0e25f9de65dfc",
+        "7d35b77fc53466b38215",
+        "869f82099337183b091f",
+        "94ecdc23636e94f79a7a",
+        "a7e4c94b6a903d619f60"
+      ]
+    }
+  ]
+}

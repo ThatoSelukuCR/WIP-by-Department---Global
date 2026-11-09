@@ -1,0 +1,335 @@
+table projtable
+	lineageTag: bad1c2f1-4ef0-4f16-8614-fc9e52b44ddd
+
+	column 'Customer Name'
+		dataType: string
+		lineageTag: 8f8f9a6e-595e-4efa-bfed-747b987239e3
+		summarizeBy: none
+		sourceColumn: Customer Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Start Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: bedee39d-4b9a-4ce0-be91-6a9c984da2ed
+		summarizeBy: none
+		sourceColumn: Start Date
+
+		variation Variation
+			isDefault
+			relationship: f252ae8a-f367-426d-b6d7-32e9a39295df
+			defaultHierarchy: LocalDateTable_675826b2-e1ec-4575-baaf-a8ebed7f57f4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End Date'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4a4b881e-ae9f-46aa-9515-47a6db68212c
+		summarizeBy: none
+		sourceColumn: End Date
+
+		variation Variation
+			isDefault
+			relationship: 1b8dd873-2c65-4331-ab5f-a014bd4222c0
+			defaultHierarchy: LocalDateTable_13f1adab-bd01-4eef-90de-8da25d03e01e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: a4d882c9-6a08-4f33-bebe-1cd67dd4f552
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Group ID'
+		dataType: string
+		lineageTag: 3662b059-3f67-41f6-92df-9dc7381f59ab
+		summarizeBy: none
+		sourceColumn: Project Group ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Parent Name'
+		dataType: string
+		lineageTag: d5122a86-01d4-4b07-beb6-cddac26ff576
+		summarizeBy: none
+		sourceColumn: Project Parent Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project ID'
+		dataType: string
+		lineageTag: ad4eaa21-5363-4421-84ba-cf9ca9dd1dda
+		summarizeBy: none
+		sourceColumn: Project ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Manager'
+		dataType: string
+		lineageTag: c184fad7-8676-459c-abfe-2a41b3d46105
+		summarizeBy: none
+		sourceColumn: Project Manager
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Header'
+		dataType: string
+		lineageTag: e530a305-74bc-4107-96f0-e19fbe738dc2
+		summarizeBy: none
+		sourceColumn: Project Header
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Stage'
+		dataType: int64
+		formatString: 0
+		lineageTag: abae45fb-6e6c-43e4-abc1-2c27cf3aafca
+		summarizeBy: sum
+		sourceColumn: Project Stage
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Type'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f0bc1ee-734c-4acf-abf8-f31f8d63ec9c
+		summarizeBy: sum
+		sourceColumn: Project Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column SL
+		dataType: string
+		lineageTag: 9985b119-d3e8-41a0-9468-e2b45ac95b8e
+		summarizeBy: none
+		sourceColumn: SL
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Contracting Entity (CE)'
+		dataType: string
+		lineageTag: fd7b37bc-bbf0-407d-95df-c19b6a2d7033
+		summarizeBy: none
+		sourceColumn: Contracting Entity (CE)
+
+		annotation SummarizationSetBy = Automatic
+
+	column recid
+		dataType: int64
+		formatString: 0
+		lineageTag: 0f11e100-132b-4f9f-b039-4ea6838424c5
+		summarizeBy: sum
+		sourceColumn: recid
+
+		annotation SummarizationSetBy = Automatic
+
+	column locationdim
+		dataType: string
+		lineageTag: 9c568556-85fb-4ffa-98de-b3d0b3e1a94e
+		summarizeBy: none
+		sourceColumn: locationdim
+
+		annotation SummarizationSetBy = Automatic
+
+	column departmentdim
+		dataType: string
+		lineageTag: 76b12f38-9995-45b1-9092-bc5b845fda34
+		summarizeBy: none
+		sourceColumn: departmentdim
+
+		annotation SummarizationSetBy = Automatic
+
+	column businessunitdim
+		dataType: string
+		lineageTag: bcf5d492-965f-42a1-97d6-888b05049151
+		summarizeBy: none
+		sourceColumn: businessunitdim
+
+		annotation SummarizationSetBy = Automatic
+
+	column teamdim
+		dataType: string
+		lineageTag: f5681a94-4bf3-4544-b043-dfc745a11d47
+		summarizeBy: none
+		sourceColumn: teamdim
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenuetypedim
+		dataType: string
+		lineageTag: 546bd03c-a198-4491-93d3-123b25e4e59a
+		summarizeBy: none
+		sourceColumn: revenuetypedim
+
+		annotation SummarizationSetBy = Automatic
+
+	column WorkerResponsible
+		dataType: int64
+		formatString: 0
+		lineageTag: 22d637ad-2c7d-4d58-8d7c-8111c9208814
+		summarizeBy: sum
+		sourceColumn: WorkerResponsible
+
+		annotation SummarizationSetBy = Automatic
+
+	column legalentity
+		dataType: string
+		lineageTag: 75c83f54-71cc-48ff-aba7-d2319a23ebea
+		summarizeBy: none
+		sourceColumn: legalentity
+
+		annotation SummarizationSetBy = Automatic
+
+	column projectcontroller
+		dataType: string
+		lineageTag: ff9e92bf-60ff-4f02-8057-cba62521a8fa
+		summarizeBy: none
+		sourceColumn: projectcontroller
+
+		annotation SummarizationSetBy = Automatic
+
+	column refrecid
+		dataType: int64
+		formatString: 0
+		lineageTag: 7789a2ea-6db8-400d-b795-14c24abaae2f
+		summarizeBy: sum
+		sourceColumn: refrecid
+
+		annotation SummarizationSetBy = Automatic
+
+	column rn
+		dataType: int64
+		formatString: 0
+		lineageTag: eed6031c-5cf9-407b-bab6-eda1ddbc27c6
+		summarizeBy: sum
+		sourceColumn: rn
+
+		annotation SummarizationSetBy = Automatic
+
+	column UniqueFinancialDimension =
+			
+			LEFT('projtable'[locationdim], 2) &
+			'projtable'[departmentdim] &
+			'projtable'[businessunitdim] &
+			'projtable'[teamdim]
+		lineageTag: 3a8745e6-dbba-44ea-8893-75afe14871f2
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Proj_Stage =
+			
+			VAR Stage = 'projtable'[Project Stage]
+			RETURN
+			SWITCH (
+			    TRUE(),
+			    Stage = 0, "Created",
+			    ISBLANK(Stage), "Invoiced",
+			    Stage = 3, "In Progress",
+			    Stage = 4, "Closed",
+			    Stage = 5, "Final Invoice",
+			    BLANK()
+			)
+		lineageTag: bc860d56-d595-465d-bdaf-86a8707a1a5c
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Project_Type = ```
+			
+			SWITCH (
+			    TRUE (),
+			    'projtable'[Project Group ID] = "1T&M-C",      "Time and materials",
+			    'projtable'[Project Group ID] = "1T&M-C(F)",   "Time & Expenses non-billable",
+			    'projtable'[Project Group ID] = "1T&M-C(FE)",  "Time non-billable",
+			    'projtable'[Project Group ID] = "1T&M-C(+)",   "Client: Time and materials (Dimensions from the employee)",
+			    'projtable'[Project Group ID] = "1T&M-IC",     "Intercompany: Time and Material",
+			    'projtable'[Project Group ID] = "2FPCP1-C",    "Fixed, % complete, Sales value",
+			    'projtable'[Project Group ID] = "3INTRL-C",    "Client: Internal",
+			    'projtable'[Project Group ID] = "4ADMIN",      "House: Specific dimensions",
+			    'projtable'[Project Group ID] = "4OVERHD",     "House: Overhead (undefined dimensions)",
+			    'projtable'[Project Group ID] = "4SALES",      "Sales / Marketing / Account management",
+			    'projtable'[Project Group ID] = "5INVST",      "Investment Capitalization Projects",
+			    "New"
+			)
+			
+			```
+		lineageTag: 079bb71f-62a8-4341-9878-2a4811eaf42e
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Project Manager Clean' =
+			
+			IF (
+			    ISBLANK ( [Project Manager] ),
+			    "zz_TBC",
+			    [Project Manager]
+			)
+		lineageTag: bdc06a7b-0c08-4810-8242-68ef5dd1871b
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column SL_Clean = ```
+			
+			IF (
+			    ISBLANK ( [SL] ),
+			    "Z_TBC",
+			    [SL]
+			)
+			
+			```
+		lineageTag: 5c9f9a59-609d-4ce8-aeaf-b118dab2c21f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column Comment
+		dataType: string
+		lineageTag: 7476a318-4336-4c7e-9ee8-785216b5e160
+		summarizeBy: none
+		sourceColumn: Comment
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created On'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 2f1a9b42-2760-484b-b38d-114be6bde96f
+		summarizeBy: none
+		sourceColumn: Created On
+
+		variation Variation
+			isDefault
+			relationship: 2180186a-6731-4dbd-abef-3d3cbf73f520
+			defaultHierarchy: LocalDateTable_359ae0cc-9a17-424f-9626-cdc8e6d1d70b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Created By'
+		dataType: string
+		lineageTag: ce9c2ed7-0ddb-4ef5-8248-a2bf13b7df48
+		summarizeBy: none
+		sourceColumn: Created By
+
+		annotation SummarizationSetBy = Automatic
+
+	partition projtable = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("SQL-PROD-EDP-WEU.database.windows.net", "DB-PROD-SYN-SILVER-WEU", [Query="#(lf)    SELECT#(lf)        p.customername AS [Customer Name],#(lf)        p.startdate AS [Start Date],#(lf)        p.enddate AS [End Date],#(lf)        p.name AS [Name],#(lf)        p.projgroupid AS [Project Group ID],#(lf)        p.projectparentname AS [Project Parent Name],#(lf)        p.projectid AS [Project ID],#(lf)        p.projectmanager AS [Project Manager],#(lf)        p.projectparentid AS [Project Header],#(lf)        p.status AS [Project Stage],#(lf)        p.type AS [Project Type],#(lf)        p.HSLCESalesLeadNum,#(lf)        UPPER(p.legalentityid) AS [Contracting Entity (CE)],#(lf)        p.recid,#(lf)        p.locationdim,#(lf)        p.departmentdim,#(lf)        p.businessunitdim,#(lf)        p.teamdim,#(lf)        p.revenuetypedim,#(lf)        p.WorkerResponsible,#(lf)        p.legalentity,#(lf)        p.projectcontroller,#(lf)        dr.refrecid,#(lf)        dr.notes as [Comment],#(lf)        dr.createdon as [Created On],#(lf)        dr.createdby as [Created By],#(lf)        rn#(lf)    FROM cdm.fo_dim_projectv p#(lf)   left join [cdm].[fo_dim_documentreferencev] dr#(lf)   ON dr.refrecid = p.recid AND rn = 1#(lf)    WHERE dr.typeid = 'Note' ", MultiSubnetFailover=true, CreateNavigationProperties=false]),
+				    #"Renamed Columns" = Table.RenameColumns(Source,{{"HSLCESalesLeadNum", "SL"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

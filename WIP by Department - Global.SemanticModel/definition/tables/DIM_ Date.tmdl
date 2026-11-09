@@ -1,0 +1,169 @@
+table 'DIM_ Date'
+	lineageTag: 718ba87d-26b7-4e30-871c-e32cc8e857aa
+
+	column DateValue
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 08359f26-ea18-43e0-8435-a780a5c94442
+		summarizeBy: none
+		sourceColumn: DateValue
+
+		variation Variation
+			isDefault
+			relationship: a0df51b4-0019-4292-8abd-2c0338c41197
+			defaultHierarchy: LocalDateTable_af1461b1-d600-494a-9a1e-43918f12209d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 18ea772a-e571-4a1d-88c4-51ad6bb891d2
+		summarizeBy: sum
+		sourceColumn: CalendarYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarQuarter
+		dataType: string
+		lineageTag: ceb20a34-049a-4e2d-a3c9-b32c24ada0b1
+		summarizeBy: none
+		sourceColumn: CalendarQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarQuarterOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: b30a7afa-c58a-4784-a44a-b2da8e3959fc
+		summarizeBy: sum
+		sourceColumn: CalendarQuarterOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarQuarterOfYearDesc
+		dataType: string
+		lineageTag: 0bdd17de-c64f-40f2-a589-439d0be1fea7
+		summarizeBy: none
+		sourceColumn: CalendarQuarterOfYearDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonthOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 2013f379-151e-44cd-b35b-efddd5effd86
+		summarizeBy: sum
+		sourceColumn: CalendarMonthOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonth
+		dataType: string
+		lineageTag: 6ffaed29-f307-44aa-92e6-fd5c7bb983a5
+		summarizeBy: none
+		sourceColumn: CalendarMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalendarMonthOfYearDesc
+		dataType: string
+		lineageTag: 52c80b1f-a1e4-485b-b671-848383ba1363
+		summarizeBy: none
+		sourceColumn: CalendarMonthOfYearDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYear
+		dataType: int64
+		formatString: 0
+		lineageTag: 7cd092db-cff4-4561-8b18-9a1509538137
+		summarizeBy: sum
+		sourceColumn: FiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearDesc
+		dataType: string
+		lineageTag: 755e1fa7-db9d-48a9-99a8-11b870698179
+		summarizeBy: none
+		sourceColumn: FiscalYearDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarter
+		dataType: string
+		lineageTag: 7f1717c1-d934-45df-b8b8-c23e4bd410bb
+		summarizeBy: none
+		sourceColumn: FiscalQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarterOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: bdc0cb69-db20-4ece-8652-1b2a21e3afc5
+		summarizeBy: sum
+		sourceColumn: FiscalQuarterOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarterOfYearDesc
+		dataType: string
+		lineageTag: c4b2399d-e3a2-4047-a9b1-0040ebfc53d8
+		summarizeBy: none
+		sourceColumn: FiscalQuarterOfYearDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthOfYear
+		dataType: int64
+		formatString: 0
+		lineageTag: f381b6e3-c843-4ad8-bafb-d48f4c312058
+		summarizeBy: sum
+		sourceColumn: FiscalMonthOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonth
+		dataType: string
+		lineageTag: f9c36f72-664d-442c-8b7a-5ae357638cad
+		summarizeBy: none
+		sourceColumn: FiscalMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthOfYearDesc
+		dataType: string
+		lineageTag: c91c286c-fd41-4a66-9b63-fb0a49f22bda
+		summarizeBy: none
+		sourceColumn: FiscalMonthOfYearDesc
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastUpdate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 394d38a3-b283-42b5-a9be-11682c2f6a6e
+		summarizeBy: none
+		sourceColumn: LastUpdate
+
+		variation Variation
+			isDefault
+			relationship: a87a9f97-f467-4d86-9389-e56b0c5d8a02
+			defaultHierarchy: LocalDateTable_9ac251ac-3d27-4ca6-82fc-00724d6c2b44.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'DIM_ Date' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("SQL-PROD-EDP-WEU.database.windows.net", "DB-PROD-SYN-SILVER-WEU", [Query="SELECT * FROM CDM.DIM_Date", MultiSubnetFailover=true, CreateNavigationProperties=false])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,757 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.9.0/schema.json",
+  "name": "0a59d4707c2dc6479653",
+  "position": {
+    "x": 0,
+    "y": 235,
+    "z": 25000,
+    "height": 541.66666666666674,
+    "width": 1263.3333333333335,
+    "tabOrder": 24000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Project Manager Clean"
+                }
+              },
+              "queryRef": "projtable (CDM).Project Manager Clean",
+              "nativeQueryRef": "PM",
+              "displayName": "PM"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Contracting Entity (CE)"
+                }
+              },
+              "queryRef": "projtable (CDM).Contracting Entity (CE)",
+              "nativeQueryRef": "Entity1",
+              "displayName": "Entity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ProjectGroupMapping"
+                    }
+                  },
+                  "Property": "Short Name"
+                }
+              },
+              "queryRef": "ProjectGroupMapping.Short Name",
+              "nativeQueryRef": "Type",
+              "displayName": "Type"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "ProjectGroupMapping"
+                    }
+                  },
+                  "Property": "Tooltip"
+                }
+              },
+              "queryRef": "ProjectGroupMapping.Tooltip",
+              "nativeQueryRef": "Type Description",
+              "displayName": "Type Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "SL"
+                }
+              },
+              "queryRef": "projtable (CDM).SL",
+              "nativeQueryRef": "Opp #",
+              "displayName": "Opp #"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Project ID"
+                }
+              },
+              "queryRef": "projtable (CDM).Project ID",
+              "nativeQueryRef": "Project #",
+              "displayName": "Project #"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Name"
+                }
+              },
+              "queryRef": "projtable (CDM).Name",
+              "nativeQueryRef": "Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Customer Name"
+                }
+              },
+              "queryRef": "projtable (CDM).Customer Name",
+              "nativeQueryRef": "Client",
+              "displayName": "Client"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Proj_Stage"
+                }
+              },
+              "queryRef": "projtable (CDM).Proj_Stage",
+              "nativeQueryRef": "Project Stage1",
+              "displayName": "Project Stage"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Start Date"
+                }
+              },
+              "queryRef": "projtable (CDM).Start Date",
+              "nativeQueryRef": "Start Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "End Date"
+                }
+              },
+              "queryRef": "projtable (CDM).End Date",
+              "nativeQueryRef": "End Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "VISTA"
+                    }
+                  },
+                  "Property": "S_ServiceLineValue"
+                }
+              },
+              "queryRef": "VISTA.S_ServiceLineValue",
+              "nativeQueryRef": "Service Line",
+              "displayName": "Service Line"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "VISTA"
+                    }
+                  },
+                  "Property": "B_Departmentvalue"
+                }
+              },
+              "queryRef": "VISTA.B_Departmentvalue",
+              "nativeQueryRef": "Practice",
+              "displayName": "Practice"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "VISTA"
+                    }
+                  },
+                  "Property": "C_BusinessUnitvalue"
+                }
+              },
+              "queryRef": "VISTA.C_BusinessUnitvalue",
+              "nativeQueryRef": "Sub-Practice",
+              "displayName": "Sub-Practice"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "VISTA"
+                    }
+                  },
+                  "Property": "D_TeamValue"
+                }
+              },
+              "queryRef": "VISTA.D_TeamValue",
+              "nativeQueryRef": "Sub-Practice Team",
+              "displayName": "Sub-Practice Team"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "projectcontroller"
+                }
+              },
+              "queryRef": "projtable (CDM).projectcontroller",
+              "nativeQueryRef": "Coordinator",
+              "displayName": "Coordinator"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Comment"
+                }
+              },
+              "queryRef": "projtable (CDM).Comment",
+              "nativeQueryRef": "Comments",
+              "displayName": "Comments"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Created By"
+                }
+              },
+              "queryRef": "projtable (CDM).Created By",
+              "nativeQueryRef": "Comment Author",
+              "displayName": "Comment Author"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "Created On"
+                }
+              },
+              "queryRef": "projtable (CDM).Created On",
+              "nativeQueryRef": "Comment Date",
+              "displayName": "Comment Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "projtable"
+                    }
+                  },
+                  "Property": "legalentity"
+                }
+              },
+              "queryRef": "projtable (CDM).legalentity",
+              "nativeQueryRef": "Legal Entity",
+              "displayName": "Legal Entity"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#053747'"
+                    }
+                  }
+                }
+              }
+            },
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Auto'"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "background": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#053747'"
+                    }
+                  }
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'All projects'"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualTooltip": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "section": {
+              "expr": {
+                "Literal": {
+                  "Value": "'___AUTO___'"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Default'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e53cdfe0505596c47014",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "Project Manager Clean"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f9ebd3b96e080c34992c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "Contracting Entity (CE)"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "08923c528c00ee136031",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "SL"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "83f826cd206d230007b2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "Project ID"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "eb4989f52410d24a048e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8ec7c2d90394b5c7c61c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "Customer Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4fa4f1a412901db10508",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "Proj_Stage"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4e0c9a23ca09933daa99",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "Start Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "11f43735903380e60ce2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "End Date"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b1450288570e33e42a7e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "VISTA"
+              }
+            },
+            "Property": "S_ServiceLineValue"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "876eeec5014c8500d084",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "VISTA"
+              }
+            },
+            "Property": "B_Departmentvalue"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "77bfa27300811d0632a3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "VISTA"
+              }
+            },
+            "Property": "C_BusinessUnitvalue"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "81e27ef513b07d58baa7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "VISTA"
+              }
+            },
+            "Property": "D_TeamValue"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "469093333b3b0b02019b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "projectcontroller"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "73aebf9db51b4c0a0a79",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "Comment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "58abb91642b014072c41",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "Created By"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3e8b31e33362ba93a338",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "Created On"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1ec72c19091e86080308",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "projtable"
+              }
+            },
+            "Property": "legalentity"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c9696fc0ccb22092a705",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ProjectGroupMapping"
+              }
+            },
+            "Property": "Short Name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "399f16a44e8e670b9a07",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "ProjectGroupMapping"
+              }
+            },
+            "Property": "Tooltip"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

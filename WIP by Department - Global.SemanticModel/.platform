@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "WIP by Department - Global"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2478b0a8-833d-42fb-902f-a7f61f1d8b19"
+  }
+}

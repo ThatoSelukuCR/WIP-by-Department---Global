@@ -1,0 +1,33 @@
+table Region_Static
+	lineageTag: 8e34cf7d-b166-455e-b19b-e918874076d5
+
+	column REGION
+		lineageTag: 797bd4c9-b1e1-4bb4-8ad5-1af1304a5411
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [REGION]
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEGALENTITY
+		lineageTag: 4f533a80-115b-4103-92b7-583e867468f0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [LEGALENTITY]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Region_Static = calculated
+		mode: import
+		source =
+				
+				DATATABLE (
+				    "REGION", STRING,
+				    "LEGALENTITY", STRING,
+				    {
+				        { "EMEA", "SA03" }
+				    }
+				)
+
+	annotation PBI_Id = e1cad98bc8504558a80a70bd7a5a8c20
+

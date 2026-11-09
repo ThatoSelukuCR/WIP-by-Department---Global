@@ -1,0 +1,100 @@
+table ProjectGroupMapping
+	lineageTag: 6aaeef5c-dd90-44e1-9e34-3fadd72d838b
+
+	measure 'Tooltip - Project Group ID' =
+			
+			SELECTEDVALUE('projtable'[Project Group ID] )
+		lineageTag: da761332-41aa-4bfa-aa64-f63929a9badd
+
+	measure 'Tooltip - Short Name' =
+			
+			VAR pg =
+			    SELECTEDVALUE ( 'projtable'[Project Group ID] )
+			VAR sn =
+			    LOOKUPVALUE (
+			        ProjectGroupMapping[Short Name],
+			        ProjectGroupMapping[Project Group ID], pg
+			    )
+			RETURN
+			    COALESCE ( sn, "--" )
+		lineageTag: 622ade26-49df-4f53-b98a-90a08f565fb8
+
+	measure 'Tooltip - Description' =
+			
+			VAR pg =
+			    SELECTEDVALUE ( 'projtable'[Project Group ID] )
+			VAR descript =
+			    LOOKUPVALUE (
+			        ProjectGroupMapping[Tooltip],
+			        ProjectGroupMapping[Project Group ID], pg
+			    )
+			RETURN
+			    COALESCE (descript, "--"  )
+		lineageTag: 1cc8a9d8-9dc6-46bd-8224-d7c1ce12a98e
+
+	column 'Project Group ID'
+		lineageTag: 5ae9532c-cc7f-45c3-a8b4-23ce790310bf
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Project Group ID]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Short Name'
+		lineageTag: fbca7d05-9f9e-4b68-adae-ec1e0f6718b2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Short Name]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Tooltip
+		lineageTag: 42b1fc36-d6ef-4660-a112-d731e0995afe
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Tooltip]
+
+		annotation SummarizationSetBy = Automatic
+
+	column SortOrder
+		formatString: 0
+		lineageTag: 23848261-455c-48ee-9504-5de4a2575569
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [SortOrder]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ProjectGroupMapping = calculated
+		mode: import
+		source =
+				
+				DATATABLE(
+				    "Project Group ID", STRING,
+				    "Short Name", STRING,
+				    "Tooltip", STRING,
+				    "SortOrder", INTEGER,
+				    {
+				        { "1T&M-C",        "T&M",     "T&M-Time and materials", 1 },
+				        { "1T&M-C(F)",     "FF",      "FF-Fixed Fee (Time & Expenses non-billable)", 2 },
+				        { "1T&M-C(FE)",    "FF",      "FF-Fixed Fee (Expenses billable)", 3 },
+				        { "1T&M-C(+)",     "T&M",     "T&M-Time and materials (Dimensions from the employee)", 4 },
+				
+				        { "1T&M-IC",       "IC",      "IC-Intercompany (Old IC Method- Servicing Entity)", 5 },
+				        { "1T&M-IC-F",     "IC-FF",   "IC-Intercompany (Fixed Fee - Servicing Entity)", 6 },
+				        { "1T&M-IC-TM",    "IC-T&M",  "IC-Intercompany (Time and Materials - Servicing Entity)", 7 },
+				        { "1T&M-CE-ic",    "IC-CE",   "IC-Intercompany (Time and Materials - Contracting Entity)", 8 },
+				
+				        { "2FPCP1-C",      "FF",      "FF-Fixed Fee (Rev to recognize % completion, Sales value)", 9 },
+				        { "3INTRL-C",      "INTERNL", "Internal Work non-billable", 10 },
+				
+				        { "4ADMIN",        "ADMIN",   "Administrative (Specific dimensions)", 11 },
+				        { "4OVERHD",       "OVERHD",  "Administrative (Overhead dimensions)", 12 },
+				        { "4SALES",        "SALES",   "Sales (Marketing / Account management)", 13 },
+				
+				        { "5INVST",        "INVST",   "Investment (Capitalization Projects)", 14 }
+				    }
+				)
+
+	annotation PBI_Id = 0a986e71268e498ab58187817eb555e0
+

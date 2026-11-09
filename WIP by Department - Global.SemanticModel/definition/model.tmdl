@@ -1,0 +1,36 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["FINANCE VwDimLocation","projtable","WIP by Department","FXRate","DIM_ Date","VISTA"]
+
+annotation PBI_ProTooling = ["WebModelingEdit","DevMode"]
+
+annotation __LastRPTime = 134202151919655976
+
+ref table DateTableTemplate_9f9ee3ef-dd9b-4ca8-a939-01f2e0d0ff26
+ref table 'FINANCE VwDimLocation'
+ref table ProjectGroupMapping
+ref table projtable
+ref table LocalDateTable_675826b2-e1ec-4575-baaf-a8ebed7f57f4
+ref table LocalDateTable_13f1adab-bd01-4eef-90de-8da25d03e01e
+ref table 'WIP by Department'
+ref table FXRate
+ref table LocalDateTable_123c18eb-b579-4cff-90a4-791a647eff24
+ref table LocalDateTable_7c2e7c93-6a02-4231-a065-8b78391e11d6
+ref table LocalDateTable_49959454-515a-4a80-bd3f-9eda30e54103
+ref table 'DIM_ Date'
+ref table LocalDateTable_af1461b1-d600-494a-9a1e-43918f12209d
+ref table LocalDateTable_9ac251ac-3d27-4ca6-82fc-00724d6c2b44
+ref table VISTA
+ref table LocalDateTable_359ae0cc-9a17-424f-9626-cdc8e6d1d70b
+ref table Region_Static
+
+ref cultureInfo en-US
+
